@@ -3,11 +3,9 @@ var romanToInt = function(s) {
     let result = 0;
     let arr = s.split('');
     for(let i=0;i<arr.length;i++){
-        if (arr[i] === 'I' && (arr[i+1] === 'V' || arr[i+1] === 'X')){
-            result -= roman[arr[i]];}
-        else if (arr[i] === 'X' && (arr[i+1] === 'L' || arr[i+1] === 'C')){
-            result -= roman[arr[i]];}
-        else if (arr[i] === 'C' && (arr[i+1] === 'D' || arr[i+1] === 'M')){
+        if ((arr[i] === 'I' && (arr[i+1] === 'V' || arr[i+1] === 'X'))||
+        (arr[i] === 'X' && (arr[i+1] === 'L' || arr[i+1] === 'C'))||
+        (arr[i] === 'C' && (arr[i+1] === 'D' || arr[i+1] === 'M'))){
             result -= roman[arr[i]];}
         else{result += roman[arr[i]];}
         }
